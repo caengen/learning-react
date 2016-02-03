@@ -12,7 +12,10 @@
 
 var fs = require('fs');
 var path = require('path');
+var _ = require('underscore');
 var express = require('express');
+var Firebase = require("firebase");
+var refComments = new Firebase('https://react-comments.firebaseio.com/comments')
 var bodyParser = require('body-parser');
 var app = express();
 
@@ -29,46 +32,42 @@ app.use(function(req, res, next) {
     // Set permissive CORS header - this allows this server to be used only as
     // an API server in conjunction with something like webpack-dev-server.
     res.setHeader('Access-Control-Allow-Origin', '*');
-
+    res.setHeader('Access-Control-Allow-Methods', 'DELETE');
+  
     // Disable caching so we'll always get the latest comments.
     res.setHeader('Cache-Control', 'no-cache');
     next();
 });
 
 app.get('/api/comments', function(req, res) {
-  fs.readFile(COMMENTS_FILE, function(err, data) {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-    res.json(JSON.parse(data));
+  refComments.once('value', function(snap) {
+      res.json(_.toArray(snap.val()));
+    });
+});
+
+app.get('/api/comments/:id', function(req, res) {
+  refComments.once('value', function(snap) {
+    res.json(_.find(snap.val(), function(obj) { return obj.id == req.params.id }));
+  });
+});
+
+app.delete('/api/comments/:id', function(req, res) {
+  refComments.once('value', function(snap) {
+    snap.forEach(function(childSnap) {
+      if (childSnap.val().id == req.params.id) {
+        childSnap.ref().remove();
+      }
+    })
   });
 });
 
 app.post('/api/comments', function(req, res) {
-  fs.readFile(COMMENTS_FILE, function(err, data) {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-    var comments = JSON.parse(data);
-    // NOTE: In a real implementation, we would likely rely on a database or
-    // some other approach (e.g. UUIDs) to ensure a globally unique id. We'll
-    // treat Date.now() as unique-enough for our purposes.
-    var newComment = {
+  var newComment = {
       id: Date.now(),
       author: req.body.author,
       text: req.body.text,
-    };
-    comments.push(newComment);
-    fs.writeFile(COMMENTS_FILE, JSON.stringify(comments, null, 4), function(err) {
-      if (err) {
-        console.error(err);
-        process.exit(1);
-      }
-      res.json(comments);
-    });
-  });
+  };
+  refComments.push(newComment);
 });
 
 
