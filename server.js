@@ -24,6 +24,7 @@ var COMMENTS_FILE = path.join(__dirname, 'comments.json');
 app.set('port', (process.env.PORT || 3000));
 
 app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/build', express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -33,7 +34,7 @@ app.use(function(req, res, next) {
     // an API server in conjunction with something like webpack-dev-server.
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'DELETE');
-  
+
     // Disable caching so we'll always get the latest comments.
     res.setHeader('Cache-Control', 'no-cache');
     next();
