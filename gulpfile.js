@@ -2,8 +2,9 @@ var gulp = require('gulp');
 var source = require('vinyl-source-stream'); // Used to stream bundle for further handling
 var browserify = require('browserify');
 var watchify = require('watchify');
-var reactify = require('reactify'); 
+var reactify = require('reactify');
 var concat = require('gulp-concat');
+var sass = require('gulp-sass');
 
 gulp.task('browserify', function() {
     var bundler = browserify({
@@ -30,8 +31,8 @@ gulp.task('browserify', function() {
 });
 
 // I added this so that you see how to run two watch tasks
-gulp.task('css', function () {
-    gulp.watch('./public/stylesheets/**/*.css', function () {
+gulp.task('sass', function () {
+    gulp.watch('./public/stylesheets/**/*.scss', function () {
         return gulp.src('styles/**/*.css')
         .pipe(concat('main.css'))
         .pipe(gulp.dest('build/'));

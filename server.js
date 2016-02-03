@@ -15,7 +15,7 @@ var path = require('path');
 var _ = require('underscore');
 var express = require('express');
 var Firebase = require("firebase");
-var refComments = new Firebase('https://react-comments.firebaseio.com/comments')
+var refComments = new Firebase('https://react-comments.firebaseio.com/comments');
 var bodyParser = require('body-parser');
 var app = express();
 
@@ -48,7 +48,7 @@ app.get('/api/comments', function(req, res) {
 
 app.get('/api/comments/:id', function(req, res) {
   refComments.once('value', function(snap) {
-    res.json(_.find(snap.val(), function(obj) { return obj.id == req.params.id }));
+    res.json(_.find(snap.val(), function(obj) { return obj.id == req.params.id; }));
   });
 });
 
@@ -58,7 +58,7 @@ app.delete('/api/comments/:id', function(req, res) {
       if (childSnap.val().id == req.params.id) {
         childSnap.ref().remove();
       }
-    })
+    });
   });
 });
 
