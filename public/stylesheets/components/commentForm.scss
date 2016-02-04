@@ -4,10 +4,32 @@
   }
 
   input {
-    display: block;
+    display: inline-block;
     border: 0;
     border-top: 1px solid $patina;
     background-color: $nebula;
     width: 100%;
+  }
+
+  button {
+    @include no-style-button;
+    img {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
+  .commentSend {
+    border: 0;
+    border-top: 1px solid $patina;
+    background-color: $nebula;
+
+    input {
+      width: auto;
+    }
+    input, button {
+      float: left;
+      display: inline-block;
+    }
   }
 }

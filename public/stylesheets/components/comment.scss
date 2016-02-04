@@ -1,5 +1,6 @@
 .comment {
   margin: 12px 0 12px 0;
+  position: relative;
 
   section {
     background: $white;
@@ -8,10 +9,7 @@
     border-bottom-right-radius: 0;
 
     button {
-      background: Transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
+      @include no-style-button;
       float: right;
 
       img {

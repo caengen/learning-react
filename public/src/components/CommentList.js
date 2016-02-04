@@ -4,10 +4,10 @@ var CommentList = React.createClass({
     if (!key) {
       return;
     }
-    
+
     this.props.onCommentDelete(key);
   },
-  
+
   render: function() {
     var commentNodes = this.props.data.map(function(comment) {
       return (
@@ -16,7 +16,7 @@ var CommentList = React.createClass({
         </Comment>
       );
     }, this);
-    
+
     return (
       <section className="commentList">
         {commentNodes}

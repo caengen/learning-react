@@ -27,3 +27,10 @@ body {
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
 }
+
+@mixin no-style-button() {
+  background: Transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

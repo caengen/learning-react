@@ -33,14 +33,14 @@ var CommentForm = React.createClass({
           value={this.state.author}
           onChange={this.handleAuthorChange}
         />
-        <section>
+        <section className="commentSend">
           <input
             type="text"
             placeholder="Type a message..."
             value={this.state.text}
             onChange={this.handleTextChange}
           />
-          <button type="submit">Post</button>
+          <button type="submit"><img src="../../vectors/ic_send_white_24px.svg"></img></button>
         </section>
       </form>
     );
