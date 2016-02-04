@@ -51,8 +51,14 @@ var CommentBox = React.createClass({
       }.bind(this)
     });
   },
+  toggleCommentBox: function() {
+    this.setState({isOpen: !this.state.isOpen});
+  },
   getInitialState: function() {
-    return {data: []};
+    return {
+      data: [],
+      isOpen: true
+    };
   },
   componentDidMount: function() {
     this.loadCommentsFromServer();
@@ -61,9 +67,9 @@ var CommentBox = React.createClass({
   render: function() {
     return (
       <div className="commentBox">
-        <h1>Comments</h1>
-        <CommentList onCommentDelete={this.handleCommentDelete} url={this.props.url} data={this.state.data}/>
-        <CommentForm onCommentSubmit={this.handleCommentSubmit} />
+        <h1 onClick={this.toggleCommentBox}>Comments</h1>
+        <CommentList onCommentDelete={this.handleCommentDelete} url={this.props.url} data={this.state.data} isOpen={this.state.isOpen} />
+        <CommentForm onCommentSubmit={this.handleCommentSubmit} isOpen={this.state.isOpen} />
       </div>
     );
   }

@@ -9,6 +9,8 @@ var CommentList = React.createClass({
   },
 
   render: function() {
+    if (this.props.isOpen) return null;
+
     var commentNodes = this.props.data.map(function(comment) {
       return (
         <Comment author={comment.author} key={comment.id} onDelete={this.handleDelete.bind(this, comment.id)}>
