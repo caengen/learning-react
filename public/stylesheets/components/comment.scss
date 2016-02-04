@@ -1,0 +1,30 @@
+.comment {
+  margin: 12px 0 12px 0;
+
+  section {
+    background: $white;
+    padding: 6px;
+    border-radius: 18px;
+    border-bottom-right-radius: 0;
+
+    button {
+      background: Transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      float: right;
+
+      img {
+        height: 1.5em;
+        width: 1.5em;
+
+      }
+    }
+  }
+}
+
+.commentAuthor {
+  display: block;
+  text-align: right;
+  padding-top: 6px;
+}

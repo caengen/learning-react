@@ -10,11 +10,15 @@ var Comment = React.createClass({
   render: function() {
     return (
       <div className="comment">
-        <h2 className="commentAuthor">
+        <section>
+          <button onClick={this.handleDelete}>
+            <img src="../../vectors/ic_clear_black_24px.svg"></img>
+          </button>
+          <span dangerouslySetInnerHTML={this.rawMarkup()} />
+        </section>
+        <small className="commentAuthor">
           {this.props.author}
-        </h2>
-        <span dangerouslySetInnerHTML={this.rawMarkup()} />
-        <button onClick={this.handleDelete}>Delete</button>
+        </small>
       </div>
     );
   }

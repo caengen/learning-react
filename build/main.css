@@ -5,15 +5,57 @@ body {
   font: 100% "source-sans-pro", sans-serif;
   color: #333; }
 
-.commentBox h1 {
-  background: #699;
-  color: #fff;
-  font-weight: 600;
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 0;
-  padding: 6px;
-  border-radius: 5px 5px 0 0; }
+* {
+  transition: all .2s ease; }
+
+.comment {
+  margin: 12px 0 12px 0; }
+  .comment section {
+    background: #fff;
+    padding: 6px;
+    border-radius: 18px;
+    border-bottom-right-radius: 0; }
+    .comment section button {
+      background: Transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      float: right; }
+      .comment section button img {
+        height: 1.5em;
+        width: 1.5em; }
+
+.commentAuthor {
+  display: block;
+  text-align: right;
+  padding-top: 6px; }
+
+.commentBox {
+  max-height: 90em;
+  width: 30em; }
+  @media screen and (max-width: 35em) {
+    .commentBox {
+      width: 20em; } }
+  .commentBox h1 {
+    background: #699;
+    color: #fff;
+    font-weight: 600;
+    font-size: 320pxpx;
+    font-size: 32pxrem;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 6px;
+    border-radius: 5px 5px 0 0; }
+
+.commentForm .commentName {
+  text-align: center; }
+
+.commentForm input {
+  display: block;
+  border: 0;
+  border-top: 1px solid #699;
+  background-color: #d2e1dd;
+  width: 100%; }
 
 .commentList {
   background-color: #d2e1dd;

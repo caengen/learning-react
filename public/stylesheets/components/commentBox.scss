@@ -1,9 +1,15 @@
 .commentBox {
+  max-height: 90em;
+  width: 30em;
+  @media screen and (max-width: 35em) {
+    width: 20em;
+  }
+
   h1 {
     background: $patina;
     color: $white;
     font-weight: $font-weight-bold;
-    font-size: $font-size-x-large;
+    @include font-size($font-size-x-large);
     text-align: center;
     margin-bottom: 0;
     padding: 6px;

@@ -1,0 +1,13 @@
+.commentForm {
+  .commentName {
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    border: 0;
+    border-top: 1px solid $patina;
+    background-color: $nebula;
+    width: 100%;
+  }
+}
