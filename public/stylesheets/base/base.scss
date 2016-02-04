@@ -1,0 +1,10 @@
+$font-stack: 'source-sans-pro', sans-serif;
+$primary-color: #333;
+
+body {
+  padding: 2em;
+  margin: 8px;
+  display: block;
+  font: 100% $font-stack;
+  color: $primary-color;
+}

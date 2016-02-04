@@ -5,6 +5,7 @@ var watchify = require('watchify');
 var reactify = require('reactify');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
+var browserSync = require('browser-sync').create();
 
 gulp.task('browserify', function() {
     var bundler = browserify({
@@ -30,14 +31,20 @@ gulp.task('browserify', function() {
     .pipe(gulp.dest('./build/'));
 });
 
-// I added this so that you see how to run two watch tasks
-gulp.task('sass', function () {
-    gulp.watch('./public/stylesheets/**/*.scss', function () {
-        return gulp.src('styles/**/*.css')
-        .pipe(concat('main.css'))
-        .pipe(gulp.dest('build/'));
+gulp.task('serve', ['styles'], function() {
+    browserSync.init({
+        proxy: 'http://localhost:3000'
     });
+
+    gulp.watch('public/**/*.scss', ['styles']);
+    gulp.watch('build/*.js').on('change', browserSync.reload);
+    gulp.watch('build/*.css').on('change', browserSync.reload);
 });
 
-// Just running the two tasks
-gulp.task('default', ['browserify', 'css']);
+gulp.task('styles', function () {
+        return gulp.src('./public/stylesheets/main.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./build/'));
+});
+
+gulp.task('default', ['browserify', 'serve']);
