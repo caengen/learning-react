@@ -1,0 +1,12 @@
+$font-stack: 'source-sans-pro', sans-serif;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+$font-size-x-large: 32px;
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}

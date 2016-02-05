@@ -1,0 +1,6 @@
+@mixin no-style() {
+  background: Transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
