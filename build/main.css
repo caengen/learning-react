@@ -53,34 +53,27 @@ body {
     border-radius: 5px 5px 0 0;
     cursor: pointer; }
 
-.commentForm .commentName {
-  text-align: center; }
-
-.commentForm input {
-  display: inline-block;
+.commentForm section {
+  display: block;
   border: 0;
   border-top: 1px solid #699;
   background-color: #d2e1dd;
-  width: 100%; }
-
-.commentForm button {
-  background: Transparent;
-  border: none;
-  outline: none;
-  cursor: pointer; }
-  .commentForm button img {
-    width: 1.5em;
-    height: 1.5em; }
-
-.commentForm .commentSend {
-  border: 0;
-  border-top: 1px solid #699;
-  background-color: #d2e1dd; }
-  .commentForm .commentSend input {
-    width: auto; }
-  .commentForm .commentSend input, .commentForm .commentSend button {
-    float: left;
-    display: inline-block; }
+  padding: 6px; }
+  .commentForm section input {
+    background: Transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 90%; }
+  .commentForm section button {
+    background: Transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    float: right; }
+    .commentForm section button img {
+      width: 1.5em;
+      height: 1.5em; }
 
 .commentList {
   background-color: #d2e1dd;

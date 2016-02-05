@@ -1,34 +1,24 @@
 .commentForm {
-  .commentName {
-    text-align: center;
-  }
-
-  input {
-    display: inline-block;
+  section {
+    display: block;
     border: 0;
     border-top: 1px solid $patina;
     background-color: $nebula;
-    width: 100%;
-  }
+    padding: 6px;
 
-  button {
-    @include no-style-button;
-    img {
-      width: 1.5em;
-      height: 1.5em;
-    }
-  }
-
-  .commentSend {
-    border: 0;
-    border-top: 1px solid $patina;
-    background-color: $nebula;
     input {
-      width: auto;
+      @include no-style;
+      width: 90%;
     }
-    input, button {
-      float: left;
-      display: inline-block;
+
+    button {
+      @include no-style;
+      float: right;
+      img {
+        width: 1.5em;
+        height: 1.5em;
+      }
     }
   }
+
 }

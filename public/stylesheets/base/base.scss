@@ -28,7 +28,7 @@ body {
   font-size: $sizeValue + rem;
 }
 
-@mixin no-style-button() {
+@mixin no-style() {
   background: Transparent;
   border: none;
   outline: none;

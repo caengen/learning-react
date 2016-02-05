@@ -9,7 +9,7 @@ var CommentList = React.createClass({
   },
 
   render: function() {
-    if (this.props.isOpen) return null;
+    if (!this.props.isOpen) return null;
 
     var commentNodes = this.props.data.map(function(comment) {
       return (

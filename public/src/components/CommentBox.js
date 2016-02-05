@@ -67,9 +67,14 @@ var CommentBox = React.createClass({
   render: function() {
     return (
       <div className="commentBox">
-        <h1 onClick={this.toggleCommentBox}>Comments</h1>
-        <CommentList onCommentDelete={this.handleCommentDelete} url={this.props.url} data={this.state.data} isOpen={this.state.isOpen} />
-        <CommentForm onCommentSubmit={this.handleCommentSubmit} isOpen={this.state.isOpen} />
+        <h1 onClick={this.toggleCommentBox}>chat</h1>
+        <CommentList onCommentDelete={this.handleCommentDelete}
+          url={this.props.url}
+          data={this.state.data}
+          isOpen={this.state.isOpen} />
+        <CommentForm
+          onCommentSubmit={this.handleCommentSubmit}
+          isOpen={this.state.isOpen} />
       </div>
     );
   }

@@ -24,18 +24,19 @@ var CommentForm = React.createClass({
     this.setState({text:''});
   },
   render: function() {
-    if (this.props.isOpen) return null;
+    if (!this.props.isOpen) return null;
 
     return (
       <form className="commentForm" onSubmit={this.handleSubmit}>
-        <input
-          className="commentName"
-          type="text"
-          placeholder="Your name"
-          value={this.state.author}
-          onChange={this.handleAuthorChange}
-        />
-      <section className="commentSubmit">
+        <section>
+          <input
+            type="text"
+            placeholder="Your name"
+            value={this.state.author}
+            onChange={this.handleAuthorChange}
+          />
+      </section>
+      <section>
           <input
             type="text"
             placeholder="Type a message..."
