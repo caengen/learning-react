@@ -1,6 +1,6 @@
 var React = require('react');
 var CommentList = React.createClass({
-  handleDelete: function(key) {
+  handleDelete: function (key) {
     if (!key) {
       return;
     }
@@ -8,10 +8,10 @@ var CommentList = React.createClass({
     this.props.onCommentDelete(key);
   },
 
-  render: function() {
+  render: function () {
     if (!this.props.isOpen) return null;
 
-    var commentNodes = this.props.data.map(function(comment) {
+    var commentNodes = this.props.data.map(function (comment) {
       return (
         <Comment author={comment.author} key={comment.id} onDelete={this.handleDelete.bind(this, comment.id)}>
           {comment.text}
@@ -24,9 +24,9 @@ var CommentList = React.createClass({
         {commentNodes}
       </section>
     );
-  }
+  },
 });
 
-var Comment = require('./Comment.js');
+var Comment = require('./Comment');
 
 module.exports = CommentList;

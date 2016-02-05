@@ -10,7 +10,7 @@ var LoginBox = React.createClass({
         <LoginDescription />
         <LoginForm onLoginSubmit={this.onLoginSubmit} />
       </div>
-    )
+    );
   }
 });
 

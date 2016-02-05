@@ -80,7 +80,7 @@ var CommentBox = React.createClass({
   }
 });
 
-var CommentList = require('./CommentList.js');
-var CommentForm = require('./CommentForm.js');
+var CommentList = require('./CommentList');
+var CommentForm = require('./CommentForm');
 
 module.exports = CommentBox;

@@ -1,18 +1,21 @@
 var React = require('react');
 var CommentForm = React.createClass({
-  getInitialState: function() {
+  getInitialState: function () {
     return {
       author: '',
-      text: ''
+      text: '',
     };
   },
-  handleAuthorChange: function(e) {
-    this.setState({author: e.target.value});
+
+  handleAuthorChange: function (e) {
+    this.setState({ author: e.target.value });
   },
-  handleTextChange: function(e) {
-    this.setState({text: e.target.value});
+
+  handleTextChange: function (e) {
+    this.setState({ text: e.target.value });
   },
-  handleSubmit: function(e) {
+
+  handleSubmit: function (e) {
     e.preventDefault();
     var author = this.state.author.trim();
     var text = this.state.text.trim();
@@ -20,10 +23,11 @@ var CommentForm = React.createClass({
       return;
     }
 
-    this.props.onCommentSubmit({author: author, text: text});
-    this.setState({text:''});
+    this.props.onCommentSubmit({ author: author, text: text });
+    this.setState({ text:'' });
   },
-  render: function() {
+
+  render: function () {
     if (!this.props.isOpen) return null;
 
     return (
@@ -47,7 +51,7 @@ var CommentForm = React.createClass({
         </section>
       </form>
     );
-  }
+  },
 });
 
 module.exports = CommentForm;

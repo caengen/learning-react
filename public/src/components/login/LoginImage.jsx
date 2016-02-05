@@ -6,7 +6,7 @@ var LoginImage = React.createClass({
       <section className="loginImage">
         <img src="../../vectors/ic_send_24px.svg" />
       </section>
-    )
+    );
   }
 });
 
