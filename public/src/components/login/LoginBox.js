@@ -1,12 +1,14 @@
 var React = require('react');
 
 var LoginBox = React.createClass({
+  onLoginSubmit: function() {
 
+  },
   render: function() {
     return (
       <div className="loginBox">
         <LoginDescription />
-        <LoginForm />
+        <LoginForm onLoginSubmit={this.onLoginSubmit} />
       </div>
     )
   }

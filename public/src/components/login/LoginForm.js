@@ -2,13 +2,36 @@ var React = require('react');
 
 var LoginForm = React.createClass({
   render: function() {
+    handleEmailChange: function(e) {
+      this.setState({ emailAddress: e.target.value });
+    },
+    handlePasswordChange: function(e) {
+      this.setState({ password: e.target.value });
+    },
+    handleSubmit: function() {
+      var emailAddress = this.state.emailAddress.trim();
+      var password = this.state.password.trim();
+
+      if (!emailAddress || !password) {
+        return;
+      },
+
+      this.props.onLoginSubmit({  emailAddress: emailAddress, password: password })
+      this.setState({ password: '' });
+    },
+    getInitialState: function() {
+      return {
+        emailAddress: '',
+        password: ''
+      }
+    },
     return (
       <form className="loginForm">
         <label for="loginEmail">Email Address</label>
-        <input id="loginEmail" type="text" />
+        <input onChange={this.handleEmailChange} value={this.state.emailAddress} id="loginEmail" type="email" />
         <label for="loginPassword">Password</label>
-        <input id="loginPassword" type="text" />
-        <button type="submit">Sign in</button>
+        <input onChange={this.handlePasswordChange} value={this.state.password} id="loginPassword" type="password" />
+        <button type="submit">Sigfdn in</button>
       </form>
     );
   }
