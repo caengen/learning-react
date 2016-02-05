@@ -3,10 +3,11 @@
   position: relative;
 
   section {
-    background: $white;
+    background: $primary-color;
     padding: 6px;
     border-radius: 18px;
     border-bottom-right-radius: 0;
+    color: $white;
 
     button {
       @include no-style-button;
@@ -15,7 +16,7 @@
       img {
         height: 1.5em;
         width: 1.5em;
-
+        fill: $accent-color;
       }
     }
   }

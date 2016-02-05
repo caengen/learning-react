@@ -43,7 +43,7 @@ var CommentForm = React.createClass({
             value={this.state.text}
             onChange={this.handleTextChange}
           />
-          <button type="submit"><img src="../../vectors/ic_send_white_24px.svg"></img></button>
+          <button type="submit"><img src="../../vectors/ic_send_24px.svg"></img></button>
         </section>
       </form>
     );

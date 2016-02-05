@@ -2,17 +2,17 @@
   section {
     display: block;
     border: 0;
-    border-top: 1px solid $patina;
-    background-color: $nebula;
+    border-top: 1px solid $primary-color;
+    background-color: $white;
     padding: 6px;
 
     input {
-      @include no-style;
+      @include no-style-button;
       width: 90%;
     }
 
     button {
-      @include no-style;
+      @include no-style-button;
       float: right;
       img {
         width: 1.5em;
@@ -20,5 +20,4 @@
       }
     }
   }
-
 }

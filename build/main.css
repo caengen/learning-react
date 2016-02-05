@@ -3,7 +3,7 @@ body {
   margin: 8px;
   display: block;
   font: 100% "source-sans-pro", sans-serif;
-  color: #333; }
+  color: #2196F3; }
 
 * {
   transition: all .2s ease; }
@@ -12,10 +12,11 @@ body {
   margin: 12px 0 12px 0;
   position: relative; }
   .comment section {
-    background: #fff;
+    background: #2196F3;
     padding: 6px;
     border-radius: 18px;
-    border-bottom-right-radius: 0; }
+    border-bottom-right-radius: 0;
+    color: #fff; }
     .comment section button {
       background: Transparent;
       border: none;
@@ -24,7 +25,8 @@ body {
       float: right; }
       .comment section button img {
         height: 1.5em;
-        width: 1.5em; }
+        width: 1.5em;
+        fill: #FF4081; }
 
 .commentAuthor {
   display: block;
@@ -36,19 +38,20 @@ body {
   bottom: 0;
   right: 0;
   width: 30em;
-  margin-right: 12px; }
+  margin-right: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
   @media screen and (max-width: 35em) {
     .commentBox {
       width: 20em; } }
   .commentBox h1 {
-    background: #699;
+    background: #1976D2;
     color: #fff;
     font-weight: 600;
     font-size: 320pxpx;
     font-size: 32pxrem;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 0;
+    margin: 0;
     padding: 6px;
     border-radius: 5px 5px 0 0;
     cursor: pointer; }
@@ -56,8 +59,8 @@ body {
 .commentForm section {
   display: block;
   border: 0;
-  border-top: 1px solid #699;
-  background-color: #d2e1dd;
+  border-top: 1px solid #2196F3;
+  background-color: #fff;
   padding: 6px; }
   .commentForm section input {
     background: Transparent;
@@ -76,7 +79,7 @@ body {
       height: 1.5em; }
 
 .commentList {
-  background-color: #d2e1dd;
+  background-color: #fff;
   padding: 1em;
   height: 30em;
   overflow-y: auto; }
