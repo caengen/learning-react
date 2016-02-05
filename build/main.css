@@ -83,3 +83,10 @@ body {
   padding: 1em;
   height: 30em;
   overflow-y: auto; }
+
+.loginBox {
+  width: 18em;
+  height: 18em;
+  padding: 6px;
+  background-color: #f7f7f7;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }

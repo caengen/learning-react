@@ -1,0 +1,8 @@
+.loginBox {
+  width: 18em;
+  height: 18em;
+
+  padding: 6px;
+  background-color: $alabaster;
+  @include material-shadow;
+}
