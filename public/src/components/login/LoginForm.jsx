@@ -35,7 +35,7 @@ var LoginForm = React.createClass({
         <input onChange={this.handleEmailChange} value={this.state.emailAddress} id="loginEmail" type="email" />
         <label for="loginPassword">Password</label>
         <input onChange={this.handlePasswordChange} value={this.state.password} id="loginPassword" type="password" />
-        <button type="submit">Sigfdn in</button>
+        <button type="submit">Sign in</button>
       </form>
     );
   },

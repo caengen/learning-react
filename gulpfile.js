@@ -9,8 +9,9 @@ var browserSync = require('browser-sync').create();
 
 gulp.task('browserify', function () {
   var bundler = browserify({
-    entries: ['./public/src/main.js'], // Only need initial file, browserify finds the deps
-    transform: [reactify], // We want to convert JSX to normal javascript
+    entries: ['./public/src/main.jsx'], // Only need initial file, browserify finds the deps
+    transform: ['reactify'], // We want to convert JSX to normal javascript
+    extensions: ['.jsx'],
     debug: true, // Gives us sourcemapping
     cache: {}, packageCache: {}, fullPaths: true, // Requirement of watchify
   });
