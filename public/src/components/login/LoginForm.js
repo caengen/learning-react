@@ -3,10 +3,12 @@ var React = require('react');
 var LoginForm = React.createClass({
   render: function() {
     return (
-      <form>
-        <input type="text"></input>
-        <input type="text"></input>
-        <button type="submit"></button>
+      <form className="loginForm">
+        <label for="loginEmail">Email Address</label>
+        <input id="loginEmail" type="text" />
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="text" />
+        <button type="submit">Sign in</button>
       </form>
     );
   }

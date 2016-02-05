@@ -3,7 +3,9 @@ var React = require('react');
 var LoginImage = React.createClass({
   render: function() {
     return (
-      <img src="../../vectors/ic_send_24px.svg" />
+      <section className="loginImage">
+        <img src="../../vectors/ic_send_24px.svg" />
+      </section>
     )
   }
 });

@@ -7,7 +7,6 @@ var LoginBox = React.createClass({
       <div className="loginBox">
         <LoginDescription />
         <LoginForm />
-        <LoginOptions />
       </div>
     )
   }
@@ -15,6 +14,5 @@ var LoginBox = React.createClass({
 
 var LoginDescription = require('./LoginDescription');
 var LoginForm = require('./LoginForm');
-var LoginOptions = require('./LoginOptions');
 
 module.exports = LoginBox;

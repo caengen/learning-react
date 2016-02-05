@@ -3,10 +3,9 @@ var React = require('react');
 var LoginDescription = React.createClass({
   render: function() {
     return (
-      <section>
+      <section className="loginDescription">
         <LoginImage />
-        <h1>Hello</h1>
-        <p>world!</p>
+        <h1>Login</h1>
       </section>
     );
   }

@@ -4,8 +4,8 @@ var LoginForm = React.createClass({
   render: function() {
     return (
       <form>
-        <input type="text"></input>
-        <input type="text"></input>
+        <input type="email"></input>
+        <input type="password"></input>
         <button type="submit"></button>
       </form>
     );
