@@ -4,7 +4,6 @@ var LoginDescription = React.createClass({
   render: function () {
     return (
       <section className="loginDescription">
-        <LoginImage />
         <h1>Login</h1>
       </section>
     );
