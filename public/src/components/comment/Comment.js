@@ -18,7 +18,7 @@ export default class Comment extends React.Component {
       <div className="comment">
         <section>
           <button onClick={this.handleDelete}>
-            <img src="../../../vectors/ic_clear_black_24px.svg"></img>
+            <img src="./vectors/ic_clear_black_24px.svg"></img>
           </button>
           <span dangerouslySetInnerHTML={this.rawMarkup()} />
         </section>

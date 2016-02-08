@@ -52,7 +52,7 @@ export default class CommentForm extends React.Component {
             value={this.state.text}
             onChange={this.handleTextChange}
           />
-        <button type="submit"><img src="../../../vectors/ic_send_24px.svg"></img></button>
+        <button type="submit"><img src="./vectors/ic_send_24px.svg"></img></button>
         </section>
       </form>
     );

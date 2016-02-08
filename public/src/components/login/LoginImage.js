@@ -6,7 +6,7 @@ export default class LoginImage extends React.Component {
   render() {
     return (
       <section className="loginImage">
-        <img src="../../vectors/ic_send_24px.svg" />
+        <img src="./vectors/ic_send_24px.svg" />
       </section>
     );
   }
