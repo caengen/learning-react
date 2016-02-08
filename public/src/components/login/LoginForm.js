@@ -1,15 +1,26 @@
-var React = require('react');
+import React from 'react';
+import autobind from 'autobind-decorator';
 
-var LoginForm = React.createClass({
-  handleEmailChange: function (e) {
+@autobind
+export default class LoginForm extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      emailAddress: '',
+      password: '',
+    }
+  }
+
+  handleEmailChange(e) {
     this.setState({ emailAddress: e.target.value });
-  },
+  }
 
-  handlePasswordChange: function (e) {
+  handlePasswordChange(e) {
     this.setState({ password: e.target.value });
-  },
+  }
 
-  handleSubmit: function () {
+  handleSubmit() {
     var emailAddress = this.state.emailAddress.trim();
     var password = this.state.password.trim();
 
@@ -19,16 +30,9 @@ var LoginForm = React.createClass({
 
     this.props.onLoginSubmit({ emailAddress: emailAddress, password: password });
     this.setState({ password: '' });
-  },
+  }
 
-  getInitialState: function () {
-    return {
-      emailAddress: '',
-      password: '',
-    };
-  },
-
-  render: function () {
+  render() {
     return (
       <form className="loginForm">
         <label htmlFor="loginEmail">Email Address</label>
@@ -38,7 +42,5 @@ var LoginForm = React.createClass({
         <button type="submit">Sign in</button>
       </form>
     );
-  },
-});
-
-module.exports = LoginForm;
+  }
+};

@@ -5,6 +5,7 @@ body {
   font: 100% "arial", sans-serif; }
 
 * {
+  -webkit-transition: all .2s ease;
   transition: all .2s ease; }
 
 .comment {
@@ -138,6 +139,7 @@ body {
   cursor: pointer;
   -webkit-appearance: none;
   color: #666;
+  -webkit-transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .loginForm button:hover {

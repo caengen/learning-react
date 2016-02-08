@@ -1,6 +1,20 @@
-var React = require('react');
-var CommentBox = React.createClass({
-  loadCommentsFromServer: function() {
+import React from 'react';
+import autobind from 'autobind-decorator';
+import CommentList from './CommentList';
+import CommentForm from './CommentForm';
+
+@autobind
+export default class CommentBox extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      data: [],
+      isOpen: true
+    };
+  }
+
+  loadCommentsFromServer() {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -12,8 +26,14 @@ var CommentBox = React.createClass({
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
-  },
-  handleCommentSubmit: function(comment) {
+  }
+
+  componentDidMount() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  }
+
+  handleCommentSubmit(comment) {
     var comments = this.state.data;
     comment.id = Date.now();
     var newComments = comments.concat([comment]);
@@ -31,14 +51,16 @@ var CommentBox = React.createClass({
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
-  },
-  handleCommentDelete: function(key) {
+  }
+
+  handleCommentDelete(key) {
     for (var i = 0; i < this.state.data; i++) {
       if (this.state.data[i].id == key) {
         this.setState({data: this.state.data.splice(i, 1)});
         break;
       }
     }
+
     $.ajax({
       url: this.props.url + '/' + key,
       dataType: 'json',
@@ -50,21 +72,13 @@ var CommentBox = React.createClass({
         console.error(key + ' has err on delete');
       }.bind(this)
     });
-  },
-  toggleCommentBox: function() {
+  }
+
+  toggleCommentBox() {
     this.setState({isOpen: !this.state.isOpen});
-  },
-  getInitialState: function() {
-    return {
-      data: [],
-      isOpen: true
-    };
-  },
-  componentDidMount: function() {
-    this.loadCommentsFromServer();
-    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-  },
-  render: function() {
+  }
+
+  render() {
     return (
       <div className="commentBox">
         <h1 onClick={this.toggleCommentBox}>chat</h1>
@@ -78,9 +92,4 @@ var CommentBox = React.createClass({
       </div>
     );
   }
-});
-
-var CommentList = require('./CommentList');
-var CommentForm = require('./CommentForm');
-
-module.exports = CommentBox;
+};

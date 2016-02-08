@@ -1,14 +1,18 @@
-var React = require('react');
-var CommentList = React.createClass({
-  handleDelete: function (key) {
+import React from 'react';
+import autobind from 'autobind-decorator';
+import Comment from './Comment';
+
+@autobind
+export default class CommentList extends React.Component {
+  handleDelete(key) {
     if (!key) {
       return;
     }
 
     this.props.onCommentDelete(key);
-  },
+  }
 
-  render: function () {
+  render() {
     if (!this.props.isOpen) return null;
 
     var commentNodes = this.props.data.map(function (comment) {
@@ -24,9 +28,5 @@ var CommentList = React.createClass({
         {commentNodes}
       </section>
     );
-  },
-});
-
-var Comment = require('./Comment');
-
-module.exports = CommentList;
+  }
+};
